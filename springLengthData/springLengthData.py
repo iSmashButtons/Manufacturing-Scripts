@@ -13,17 +13,14 @@ import time
 
 # ===== CONFIG ===== #
 NAME='SES spring length database'
-# TODO FOR 1.0: account  for double-spring seals
 VERSION='0.2'
-CSV_PATH=r'C:\Users\chavesd\springLengthData\springData.csv' # path on work laptop
-#CSV_PATH=r'/media/maquinisto/dencha/springLengthData/springData.csv' # path on codex
+CSV_PATH=r'C:\Users\chavesd\springLengthData\springData.csv'
 CSVHEADER=''
 cantileverV={ '000':0.020, '100':0.030, '200':0.040, '300':0.055, '400':0.075, '500':0.150 }
 cantileverU={ 'B':0.020, 'C':0.028, 'D':0.045, 'E':0.050, 'F':0.102, 'G':0.182 }
 BOMregex=r'\d{3}MS|\d{3}[B-G]|\d{3}X\d{3}X\d{3}' # cant-V | cant-U | helical
 
 # ===== FUNCTIONS ===== #
-
 def welcomeSign():
     """Displays a welcome message"""
     for i in range(len(NAME)):
