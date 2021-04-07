@@ -7,7 +7,7 @@ A collection of programs/scripts I've used on the job.
 
 A simple script to archive the shop's NC code library into a zip file. Windows Task Scheduler runs this script automatically every other week. It has saved us from many accidental file-overwrite scares.
 
-### Spring Length Data
+### Spring Length Data (sld.py)
 
 Is a data entry & recall program. Part of the process of creating spring-energized seals is determining how long to cut the spring, so that it can be welded end-to-end to create a circle and then inserted into the seal jacket. I was being approached every day by assemblers asking me to calculate this length for them. I created this program so that I would not have to calculate the length more than once.
 
