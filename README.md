@@ -1,8 +1,6 @@
 # Manufacturing Scripts
 A collection of programs/scripts I've used on the job.
 
-# What's in here?
-
 ## ncArchiver
 
 A simple script to archive the shop's NC code library into a zip file. Windows Task Scheduler runs this script automatically every other week. It has saved us from many accidental file-overwrite scares.
