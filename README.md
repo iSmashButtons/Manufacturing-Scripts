@@ -1,4 +1,4 @@
-# manufacturing
+# Manufacturing Scripts
 A collection of programs/scripts I've used on the job.
 
 ## What's in here?
