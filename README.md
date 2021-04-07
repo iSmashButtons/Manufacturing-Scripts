@@ -1,5 +1,5 @@
 # manufacturing
-A collection of programs/scripts I've used on the job to solve manufacturing problems.
+A collection of programs/scripts I've used on the job.
 
 ## What's in here?
 
