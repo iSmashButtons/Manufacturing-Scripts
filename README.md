@@ -19,56 +19,32 @@ The way `sesf` works is you execute the program and pass in an item number. It w
 
 I am a neophyte programmer. If you are a seasoned coder familiar with Python I would love to get your feedback on my script. Thanks for checking it out!
 
-# nc-linter
+# NC-linter
 
-Shell script that reads through NC programs looking for typos/formatting errors, then prints those errors in a report.
+Shell script that reads through NC programs looking for typos/formatting errors, then prints those errors in a report. The script will test every file argument handed to it for common syntax errors. These are the errors it checks for:
 
-## The goal of nc-linter
-
-The program will test every file argument handed to it for common syntax errors. These are the tests performed:
-
-- [x] missing Transmission Start marker (%)
-- [x] program address is ":" instead of "O"
-- [x] extraneous Tx-markers (%)
-- [x] leading/trailing whitespace on lines
-- [x] open comments
-- [x] double-decimals (`X.0.0`)
-- [x] missing address (number without a corresponding address, eg: `0.1234`)
-- [x] demical values exceeding 4 digits.
+- missing Transmission Start marker (%)
+- program address is ":" instead of "O"
+- extraneous transmission markers (%)
+- leading/trailing whitespace on lines
+- open comments
+- double-decimals (`X10.0.0`)
+- missing address (number without a corresponding address, eg: `0.1234`)
+- decimal values exceeding 4 digits.
 
 A report is output for each file. The report lists a terse error description along with the line numbers where the error appears. Some "errors", like leading/trailing spaces, don't cause any trouble at the machine but they are ugly. For these errors the total number of lines is output instead of unique line numbers.
 
-Initially my plan was for *nc-linter* to find and fix errors in NC programs. I decided against this because a bug in *nc-linter* could lead to bad fixes in hundreds of NC programs. Instead, *nc-linter* will only report on what is wrong with each file, giving you the type of error and the line on which it is located. A human will still need to fix the errors directly.
-
-## Compatibility
-
-As with all things CNC related, what mistakes will or will not be tolerated varies from control to control. Some modern controls don't require transmission indicators (`%`) or use an `O` program address. *nc-linter* is written with Haas & FANUC controllers in mind.
-
-*nc-linter* requires **dos2unix** to be installed on your system to convert line-endings. *nc-linter* will convert the file from DOS to Unix line-endings, run tests, and then re-convert back to DOS. This is done purely for ease of use in the working environment. NC programs are typically stored on Windows computers, so they should use DOS line-endings. The machine controllers typically don't care what line-endings are used. Most controls automatically replace line-endings with `;` during transmission.
+Initially my plan was for *nc-linter* to find and fix errors in NC programs. I decided against this because a bug in *nc-linter* could lead to bad fixes in hundreds of NC programs. Instead, *nc-linter* will only report on what is wrong with each file, giving you the type of error and the line on which it is located. A human will still need to fix the errors directly. As with all things CNC related, what mistakes will or will not be tolerated varies from control to control. Some modern controls don't require transmission markers (`%`) or use a letter other than `O` for program address. *nc-linter* is written with Haas & FANUC controllers in mind.
 
 # cabinet-project
 
-Trying to make sense of the mystery tool cabinet using bash. The SES production area had a cabinet full of bins and each bin contained several tools. Many of the tools were custom grinds. The problem with this cabinet was the fact that no one had any idea what tools were for which part numbers.
-
-Using a series of passes through `grep` and `uniq` the following colon-delimited lists were generated:
+At the start of SES in Groveland, we inherited a cabinet full of bins with tools. Most of the tools were custom grinds. There were several tools to a bin and the bins were labeled A1-60, B1-60, etc. The problem was that no one knew which tools we for what job, and the bins were shaken around turn transport. So even on the rare occasion when we came accross a program that referenced a tool in a bin here, more often than not the tool located in that bin had nothing to do with the job at hand. This script is an attempt to sort out this cabinet. I grep'd through every program looking for a pattern matching the bin labels: A24, B16, C32, et cetera. This produced a list of programs where a tool was referenced. There were many duplicate matches so I filtered these out with the `uniq` program. The end result was four files with comma-delimited lists.
 
 - `bins_A.uniq.r1`
 - `bins_B.uniq.r1`
 - `bins_C.uniq.r1`
 - `bins_D.uniq.r1`
 
-Each list item displays the filename, the line number on which a bin was mentioned, the comment containing a bin number. In that order. The file names from this list are also cross-referenced with a CSV to find the appropriate part number for that program file. All this information is then output to another list which will be used to sort out the cabinet.
+Each list item displays the filename, the line number on which a bin was mentioned, the comment containing a bin number. In that order. The file names from this list are cross-referenced with a CSV to find the appropriate part number for that program file. All this information is then output to another list which will be used to sort out the cabinet. This last list I can use to look up a part drawing. I can then pull the tool and compare it to the drawing, if it looks like a useful tool for that job, I kept it. Otherwise I threw it out.
 
-## What's in here?
-
-### `bin-reporter.sh`
-This is the main program that generates reports for each group of bins. Probably not the most efficient script ever conceived, but it works. :)
-
-### `CNC_program_log.csv`
-A CSV listing program numbers/file names and their associated part numbers.
-
-### `nested_fors.sh`
-a prototype for `bin_arrays.sh`. The nested for loop works here but not in `bin_arrays.sh`... Hmmm...
-
-## `one-bin.sh`
-A prototype for `bin-reporter`. It only runs through one group of bins.
+`bin-reporter.sh` takes one of the above mentioned lists in argument and process it, producing a new list use to sort out the tools in the cabinet.
