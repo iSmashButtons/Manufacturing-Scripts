@@ -1,0 +1,54 @@
+#! /bin/bash
+
+#.. Dealing with syntax problem in array names.
+
+#.. Play with Cabinet J.
+Now="J"
+declare -a "Cab_${Now}"
+
+#.. Make a name that can be used for Assignments.
+declare -n Cab_Name="Cab_${Now}"
+declare -p Cab_Name
+
+Cab_Name+=( Atlanta Albuquerque Austin )
+echo "Cab_Name ${Cab_Name[*]}"
+echo "Cab_J    ${Cab_J[*]}"
+#.. But THIS is invalid: echo Cab_J ${Cab_${Now}[*]}
+
+B1="Baltimore Birmingham"
+B2="Boston Buffalo"
+
+#.. Quotes group words.
+Cab_Name+=( "${B1}" )
+Cab_Name+=(  ${B2}  )
+
+#.. Iterate the indexes and get the values.
+for e in "${!Cab_Name[@]}"; do
+	echo "${e}" "${Cab_Name[${e}]}"
+done
+
+#.. Really good debug for an array.
+declare -p Cab_${Now}
+
+unset -n Cab_Name
+declare -p -n
+
+#.. So this is how your double loop would work.
+
+for c in {A..D}; do declare -a Cab_${c}; done
+
+for r in {1..3}; do
+	echo "Outer loop $r"
+	for c in {A..D}; do
+		echo "Inner loop $c"
+		declare -n Cab=Cab_${c}
+		Cab+=( "Do $r $c" )
+	done
+done
+
+declare -p -n
+unset -n Cab
+for c in {A..D}; do
+	declare -p "Cab_${c}"
+done
+

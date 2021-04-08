@@ -1,0 +1,942 @@
+filename: 01679.nc
+line: 84
+bin: D-41
+part: FS030183J
+FS030184J
+
+filename: 02344.nc
+line: 17
+bin: D01
+part: 308887
+
+filename: 02582.nc
+line: 11
+bin: D-45
+part: FC014250J
+
+filename: 03540.nc
+line: 5
+bin: D-10
+part: FC013035J
+
+filename: 03704.nc
+line: 13
+bin: D-56
+part: C012458J
+
+filename: 03730.nc
+line: 77
+bin: D-15
+part: FC013202J
+
+filename: 03814.nc
+line: 71
+bin: D15
+part: FS030508W
+
+filename: 03819.nc
+line: 59
+bin: D-16
+part: FC013231J
+
+filename: 03830.nc
+line: 57
+bin: D-17
+part: FC013336J
+
+filename: 03862.nc
+line: 80
+bin: D-12
+part: FL051786J
+
+filename: 03863.nc
+line: 40
+bin: D-59
+part: FC013392J
+
+filename: 03894.nc
+line: 64
+bin: D-15
+part: C013116J
+
+filename: 03911.nc
+line: 83
+bin: D-41
+part: FC013441J
+
+filename: 03928.nc
+line: 18
+bin: D-60
+part: FC013338J
+
+filename: 03965.nc
+line: 18
+bin: D-41
+part: FC013521J
+
+filename: 04049.nc
+line: 76
+bin: D-43
+part: FM061021J
+
+filename: 04191.nc
+line: 70
+bin: D-20
+part: FS030543J
+
+filename: 04212.nc
+line: 18
+bin: D-29
+part: FH021152J
+
+filename: 04215.nc
+line: 70
+bin: D-23
+part: FC013808J
+
+filename: 04268.nc
+line: 12
+bin: D-21
+part: FL051875J
+
+filename: 04323.nc
+line: 75
+bin: D-39
+part: FC013500J
+
+filename: 04395.nc
+line: 81
+bin: D-52
+part: FC013545J
+
+filename: 04511.nc
+line: 124
+bin: D-57
+part: FL051974J
+
+filename: 04840.nc
+line: 31
+bin: D-28
+part: FC014540J
+
+filename: 04854.nc
+line: 68
+bin: D-25
+part: FL052095J
+
+filename: 05561.nc
+line: 57
+bin: D-52
+part: fc014928j
+
+filename: 05923.nc
+line: 78
+bin: D36
+part: fc015418j
+
+filename: 06337.nc
+line: 12
+bin: D-45
+part: FC016004J
+
+filename: 06729.nc
+line: 85
+bin: D-40
+part: FC016334J
+FC01N10576J
+
+filename: 06751.nc
+line: 89
+bin: D-28
+part: FC016383J
+FC019410J
+FC019731J
+
+filename: 07245.nc
+line: 6
+bin: D-36
+part: FC013466J
+
+filename: 07364.nc
+line: 57
+bin: D-53
+part: FC016849J
+
+filename: 07407.nc
+line: 72
+bin: D-24
+part: FL052549J
+
+filename: 07503.nc
+line: 25
+bin: D-39
+part: FS031245J
+
+filename: 07508.nc
+line: 79
+bin: D12
+part: FC016995B
+
+filename: 07532.nc
+line: 71
+bin: D-22
+part: FL052533J
+
+filename: 07556.nc
+line: 70
+bin: D-45
+part: FH022109J
+
+filename: 07616.nc
+line: 49
+bin: D36
+part: FS031260J
+
+filename: 07688.nc
+line: 61
+bin: D-10
+part: FC017264J
+
+filename: 07767.nc
+line: 48
+bin: D14
+part: FC017283J
+
+filename: 07785.nc
+line: 5
+bin: D-10
+part: FC017380J
+
+filename: 07801.nc
+line: 99
+bin: D-45
+part: FC017391J
+
+filename: 07806.nc
+line: 87
+bin: D17
+part: FH020661J
+
+filename: 07843.nc
+line: 116
+bin: D-43
+part: FS031295J
+
+filename: 07844.nc
+line: 166
+bin: D-43
+part: FL052622J
+
+filename: 07846.nc
+line: 9
+bin: D-15
+part: FC017397J
+
+filename: 07847.nc
+line: 9
+bin: D-15
+part: FC017396J
+
+filename: 07911.nc
+line: 45
+bin: D-23
+part: FL052618J
+
+filename: 07945.nc
+line: 41
+bin: D-23
+part: FL052631J
+
+filename: 07954.nc
+line: 12
+bin: D-53
+part: FC017470J
+
+filename: 08002.nc
+line: 52
+bin: D-28
+part: FC017579J
+
+filename: 08005.nc
+line: 12
+bin: D45
+part: FC017635J
+
+filename: 08029.nc
+line: 66
+bin: D-45
+part: FC017622J
+
+filename: 08062.nc
+line: 13
+bin: D24
+part: FL052636J
+
+filename: 08079.nc
+line: 54
+bin: D-45
+part: FC017731J
+
+filename: 08102.nc
+line: 56
+bin: D-43
+part: FC017722J
+
+filename: 08108.nc
+line: 9
+bin: D-15
+part: FC017720J
+
+filename: 08109.nc
+line: 64
+bin: D-39
+part: FC017733J
+
+filename: 08144.nc
+line: 10
+bin: D-15
+part: FC017828J
+
+filename: 08208.nc
+line: 67
+bin: D-39
+part: FL052649J
+
+filename: 08214.nc
+line: 42
+bin: D-15
+part: FH022255J
+
+filename: 08220.nc
+line: 48
+bin: D-23
+part: FL052742J
+
+filename: 08229.nc
+line: 76
+bin: D45
+part: FC017812J
+
+filename: 08375.nc
+line: 44
+bin: D-23
+part: FL052708J
+
+filename: 08447.nc
+line: 12
+bin: D-45
+part: FC018088J
+
+filename: 08448.nc
+line: 12
+bin: D-45
+part: FC018089J
+
+filename: 08449.nc
+line: 12
+bin: D-45
+part: FC018090J
+
+filename: 08532.nc
+line: 9
+bin: D-15
+part: FC018168J
+
+filename: 08544.nc
+line: 69
+bin: D25
+part: FL052715J
+
+filename: 08997.nc
+line: 73
+bin: D-39
+part: FC018548J
+
+filename: 10052.nc
+line: 60
+bin: D-53
+part: 10052
+FC018585J
+
+filename: 10202.nc
+line: 12
+bin: D-15
+part: FC018760J
+
+filename: 10335.nc
+line: 60
+bin: D-53
+part: FC018534J
+
+filename: 10416.nc
+line: 12
+bin: D-12
+part: FS031525J
+
+filename: 10538.nc
+line: 12
+bin: D-15
+part: FC018043J
+
+filename: 10627.nc
+line: 92
+bin: D-45
+part: FC019074J-1 & -2
+
+filename: 11050.nc
+line: 67
+bin: D-45
+part: FC019241J
+
+filename: 11300.nc
+line: 55
+bin: D-43
+part: FH022784J
+
+filename: 11303.nc
+line: 57
+bin: D-43
+part: FH022783J
+
+filename: 11709.nc
+line: 67
+bin: D-10
+part: FC01N10002J
+
+filename: 13967.nc
+line: 91
+bin: D-28
+part: FC01N12099J
+
+filename: 03512.NC
+line: 78
+bin: D-60
+part: C012840J
+
+filename: 03538.NC
+line: 11
+bin: D-45
+part: FC012905J
+
+filename: 03683.NC
+line: 36
+bin: D-58
+part: FM060930J
+
+filename: 03684.NC
+line: 60
+bin: D-58
+part: FM060929J
+
+filename: 03701.NC
+line: 34
+bin: D43
+part: FM060970J
+
+filename: 03707.NC
+line: 80
+bin: D-56
+part: C012457J
+
+filename: 03984.NC
+line: 70
+bin: D-41
+part: FC013518J
+
+filename: 04033.NC
+line: 74
+bin: D-59
+part: FC013456J
+
+filename: 04123.NC
+line: 70
+bin: D-12
+part: FM061167R
+
+filename: 04182.NC
+line: 65
+bin: D-20
+part: FH021126J
+
+filename: 04198.NC
+line: 28
+bin: D-23
+part: FC013174J
+
+filename: 04264.NC
+line: 57
+bin: D-12
+part: FM061212J
+
+filename: 04270.NC
+line: 58
+bin: D-48
+part: FH021177J
+
+filename: 04299.NC
+line: 59
+bin: D-52
+part: FC013933J
+
+filename: 04307.NC
+line: 72
+bin: D-59
+part: FC013627J
+
+filename: 04317.NC
+line: 42
+bin: d-40
+part: FM781674-1
+
+filename: 04356.NC
+line: 66
+bin: D-24
+part: FL051956J
+
+filename: 04378.NC
+line: 61
+bin: D-41
+part: FC014030J
+
+filename: 04382.NC
+line: 13
+bin: D-40
+part: FS030670J
+
+filename: 04383.NC
+line: 9
+bin: D-15
+part: FC013677J
+
+filename: 04408.NC
+line: 71
+bin: D-33
+part: FM060986S
+
+filename: 04409.NC
+line: 61
+bin: D-33
+part: FM060986J
+
+filename: 04410.NC
+line: 13
+bin: D-27
+part: FC014009J
+
+filename: 04453.NC
+line: 28
+bin: D-60
+part: FC013769J
+
+filename: 04455.NC
+line: 83
+bin: D-60
+part: FL051944J
+
+filename: 04466.NC
+line: 95
+bin: D-60
+part: FL051980J
+
+filename: 04487.NC
+line: 11
+bin: D-15
+part: FC014141J
+
+filename: 04488.NC
+line: 60
+bin: D12
+part: FC014028J
+
+filename: 04503.NC
+line: 32
+bin: D-28
+part: FC014131J
+
+filename: 04515.NC
+line: 13
+bin: D-45
+part: FC014072J
+
+filename: 04519.NC
+line: 63
+bin: D-41
+part: FC014196J
+
+filename: 04527.NC
+line: 15
+bin: D-60
+part: FL051909J
+
+filename: 04619.NC
+line: 10
+bin: D-45
+part: FC014147J
+
+filename: 04627.NC
+line: 87
+bin: D-28
+part: FS030702J
+
+filename: 04628.NC
+line: 65
+bin: D-29
+part: FS030703J
+
+filename: 04629.NC
+line: 11
+bin: D-27
+part: 3.5 BALL
+
+filename: 04636.NC
+line: 14
+bin: D-20
+part: FH021296J
+
+filename: 04646.NC
+line: 81
+bin: D-30
+part: FC014273J
+
+filename: 04690.NC
+line: 60
+bin: D-12
+part: FC014348J
+
+filename: 04692.NC
+line: 13
+bin: D-12
+part: FC014351J
+
+filename: 04693.NC
+line: 12
+bin: D-12
+part: FC014351H
+
+filename: 04694.NC
+line: 13
+bin: D-12
+part: FC014350J
+
+filename: 04695.NC
+line: 12
+bin: D-12
+part: FC014350H
+
+filename: 04702.NC
+line: 12
+bin: D-12
+part: FC014352H
+
+filename: 04707.NC
+line: 56
+bin: D-36
+part: fm061271-f
+
+filename: 04709.NC
+line: 14
+bin: D-24
+part: FM1100-1012-2
+
+filename: 04721.NC
+line: 9
+bin: D-45
+part: fc014290j
+
+filename: 04737.NC
+line: 73
+bin: D-55
+part: FC014401J
+
+filename: 04792.NC
+line: 17
+bin: D-37
+part: fr040390j
+
+filename: 04793.NC
+line: 35
+bin: D-37
+part: fr040390p
+
+filename: 05075.NC
+line: 59
+bin: D-52
+part: FM061485J
+
+filename: 05179.NC
+line: 29
+bin: D41
+part: fc013927j
+
+filename: 05251.NC
+line: 27
+bin: D-60
+part: fc014332j
+
+filename: 05510.NC
+line: 80
+bin: D-45
+part: FC015212J
+
+filename: 05569.NC
+line: 11
+bin: D-15
+part: fc015140
+
+filename: 05570.NC
+line: 11
+bin: D-15
+part: fc015139j
+
+filename: 05703.NC
+line: 78
+bin: D36
+part: FC015183J
+
+filename: 05720.NC
+line: 9
+bin: D-15
+part: FC015195J
+
+filename: 05745.NC
+line: 13
+bin: D-15
+part: FC015425J
+
+filename: 05848.NC
+line: 13
+bin: D-45
+part: FC015478J
+
+filename: 05858.NC
+line: 9
+bin: D-45
+part: FC015472J
+
+filename: 05881.NC
+line: 9
+bin: D-15
+part: fc015499j
+
+filename: 05895.NC
+line: 38
+bin: D39
+part: FL052276J
+
+filename: 05903.NC
+line: 9
+bin: D-45
+part: fc014674j
+
+filename: 05906.NC
+line: 9
+bin: D-45
+part: FC015558J
+
+filename: 06138.NC
+line: 5
+bin: D-10
+part: fc015710j
+
+filename: 06141.NC
+line: 9
+bin: D-45
+part: FC015746J
+
+filename: 06218.NC
+line: 80
+bin: D-30
+part: FC015839J
+
+filename: 06272.NC
+line: 15
+bin: D-45
+part: FC015922J
+
+filename: 06293.NC
+line: 9
+bin: D-45
+part: FC015929J
+
+filename: 06304.NC
+line: 11
+bin: D-45
+part: FC015932J
+
+filename: 06305.NC
+line: 11
+bin: D-45
+part: FC015930J
+
+filename: 06336.NC
+line: 9
+bin: D-45
+part: FC015899J
+
+filename: 06453.NC
+line: 9
+bin: D-45
+part: FC016093J
+
+filename: 06499.NC
+line: 59
+bin: D-25
+part: FL052375J
+
+filename: 06650.NC
+line: 12
+bin: D-45
+part: FC016265J
+
+filename: 06708.NC
+line: 81
+bin: D-24
+part: FL052395J
+
+filename: 06781.NC
+line: 53
+bin: D-23
+part: FC016380V
+
+filename: 06818.NC
+line: 47
+bin: D-13
+part: FH021942J
+
+filename: 06825.NC
+line: 83
+bin: D-17
+part: "FC016359J-1
+
+filename: 06827.NC
+line: 124
+bin: D-36
+part: FM062021
+
+filename: 06840.NC
+line: 76
+bin: D-28
+part: FC016374J
+
+filename: 06928.NC
+line: 92
+bin: D-52
+part: FC014929J
+
+filename: 06934.NC
+line: 26
+bin: D-13
+part: FS031158J
+
+filename: 06935.NC
+line: 9
+bin: D-45
+part: FC016497J
+
+filename: 06946.NC
+line: 62
+bin: D-13
+part: FH021966J
+
+filename: 06968.NC
+line: 78
+bin: D35
+part: FL052501J
+
+filename: 06987.NC
+line: 9
+bin: D-45
+part: FC016564J
+
+filename: 07010.NC
+line: 12
+bin: D-12
+part: FC016590H
+
+filename: 07025.NC
+line: 12
+bin: D-12
+part: FC016568H
+
+filename: 07126.NC
+line: 62
+bin: D-13
+part: FH022015J
+
+filename: 07166.NC
+line: 60
+bin: D-53
+part: FC016664V
+
+filename: 07195.NC
+line: 58
+bin: D-23
+part: FM062165V
+
+filename: 07225.NC
+line: 27
+bin: D-13
+part: FS031202J
+
+filename: 07247.NC
+line: 12
+bin: D-17
+part: FH021870J
+
+filename: 07258.NC
+line: 7
+bin: D45
+part: FC016651J
+
+filename: 07344.NC
+line: 108
+bin: D-44
+part: FC016832S
+
+filename: 07416.NC
+line: 74
+bin: D-11
+part: FC016412J
+
+filename: 07417.NC
+line: 74
+bin: D-11
+part: FC016411J
+
+filename: 07865.NC
+line: 14
+bin: D-45
+part: FC017475J
+
+filename: 07866.NC
+line: 14
+bin: D-45
+part: FC017316J
+
+filename: 08709.NC
+line: 11
+bin: D-15
+part: FC018350J
+
+filename: 10851.NC
+line: 58
+bin: D-43
+part: FC019236J
+
+filename: 11048.NC
+line: 13
+bin: D-15
+part: FC019467J
+
+filename: 6336.NC
+line: 9
+9
+bin: D-45
+D-45
+part: 
+
+filename: O10052.NC
+line: 60
+bin: D-55
+part: 
+

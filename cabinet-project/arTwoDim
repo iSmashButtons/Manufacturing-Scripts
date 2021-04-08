@@ -1,0 +1,105 @@
+#! /bin/bash
+
+#.. Declare an Associative Array.
+#.. We use a two-part index like [C,4] for Cabinet C, Row 4.
+#.. Rows count from 1. The maximum used so far is in [C,m].
+#.. The comma is not shell syntax, just a "," to separate Col and Row.
+#.. It resembles multiple index notation in some languages.
+
+declare -A Ar_2D
+
+#.. Return a requested value from the Array.
+#.. If row is zero, return the maximum row number used.
+function getVal {	#:: (cab, row)
+
+	local Cab="${1}" Row="${2}"
+
+	[[ "${Row}" -eq 0 ]] && Row="m"
+	printf '%s' "${Ar_2D[$Cab,$Row]}"
+}
+
+#.. Set a specified value into the Array.
+#.. If row is zero, append a new highest row.
+function setVal {	#:: (cab, row, value)
+
+	local Cab="${1}" Row="${2}" Value="${3}"
+
+	[[ "${Row}" -eq 0 ]] && Row=$(( ++Ar_2D[$Cab,"m"] ))
+	[[ Ar_2D[$Cab,"m"] -lt "${Row}" ]] && Ar_2D[$Cab,"m"]="${Row}"
+
+	Ar_2D[$Cab,$Row]="${Value}"
+}
+
+#.. Show all non-empty rows for a Cab.
+function getCab {	#:: (cab)
+
+	local Cab="${1}" Row Value Max="${Ar_2D[${1},"m"]}"
+	local Fmt='Cab %4s Row %4d Value :%s:\n'
+
+	[[ "${Max}" -lt 1 ]] && printf 'Cab %s is Empty\n' "${Cab}"
+
+	for ((Row = 1; Row <= Max; ++Row)); do
+		Value="${Ar_2D[$Cab,$Row]}"
+		[[ "${#Value}" -gt 0 ]] &&
+			printf "${Fmt}" "${Cab}" "${Row}" "${Value}"
+	done
+}
+
+#.. Test function to demonstrate usage.
+function BetaTest {
+
+	local Cab Row
+
+	for Row in {p..s}; do setVal J 0 "Set incremental row $Row"; done
+	for Row in {15..12}; do setVal J ${Row} "Set specific row $Row"; done
+	for Row in 2 24 13; do setVal J ${Row} "Set updated row $Row"; done
+
+	local cJmx=$( getVal J 0 )
+	local cJr3=$( getVal J 3 )
+	echo "Cab J max ${cJmx} row 3 ${cJr3}"
+
+	for Cab in {A..Z}; do getCab "${Cab}"; done
+}
+
+#.. Capacity test function -- does 26 * 200 elements.
+#.. Also shows some extra syntax possibilities.
+#.. NB. This does not use getCab getVal setVal.
+#.. In particular, the "m" size element is not updated.
+
+function BigTest {
+
+	local Cab Row Key Data Num=0
+
+#.. Iterate over the indexes (any order) to fill it up.
+	for Row in {200..1}; do
+		for Cab in {A..Z}; do
+			Data=$( printf 'Cab %s Row %s' $Cab $Row )
+			Ar_2D[$Cab,$Row]="${Data}"
+		done
+	done
+
+#.. Special construct to emit all keys (but in random order)
+	for Key in "${!Ar_2D[@]}"; do
+		(( ++Num ))
+		Ar_2D[$Key]+=" Added ${Num}"	#.. Add text to existing data.
+	done
+	printf 'Updated %d elements\n' "${Num}"
+
+#.. Report 12 selected entries in specified order.
+	FMT='%4s: lth %d: %s\n'
+	for Cab in {P..S}; do
+		for Row in {3..5}; do
+			Key="${Cab},${Row}"
+			printf "${FMT}" "$Key" "${#Ar_2D[$Key]}" "${Ar_2D[$Key]}"
+		done
+	done
+}
+
+#### Script Body Starts Here.
+
+	echo -e "\n.... BetaTest"
+	time BetaTest
+
+	echo -e "\n.... BigTest"
+	time BigTest
+

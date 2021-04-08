@@ -1,7 +1,7 @@
 # Manufacturing Scripts
 A collection of programs/scripts I've used on the job.
 
-## ncArchiver
+## ncArchiver.py
 
 A simple script to archive the shop's NC code library into a zip file. Windows Task Scheduler runs this script automatically every other week. It has saved us from many accidental file-overwrite scares.
 
@@ -10,3 +10,65 @@ A simple script to archive the shop's NC code library into a zip file. Windows T
 Is a data entry & recall program. Part of the process of creating spring-energized seals is determining how long to cut the spring, so that it can be welded end-to-end to create a circle and then inserted into the seal jacket. I was being approached every day by assemblers asking me to calculate this length for them. I created this program so that I would not have to calculate the length more than once.
 
 The user inputs an item number. If this is the first time the item number has been entered, the user is asked to supply more information about spring type, and diameter of installation. This information is then saved to a CSV so it can be recalled later or viewed by my other coworkers. If the item number is already in the CSV file, the program returns this information in a table.
+
+# SES-Finder (sesf.py)
+
+A script to help me quickly find files in several locations based on a single item number. I use this on the job several times a day. What inspired the creation of this script was the tedium of searching for the files I needed to work with on a daily basis. Windows File Explorer is one of the worst file managers around, and SolidWork's PDM system is very slow. It can take several minutes to load and navigate to one of the several locations where the files I need might be. And once I get there, the part number I"m looking for might now be there. My job revolves around getting product out on time, so every minute counts. I needed a quicker way to find all the files I could possibly want related to a certain part number.
+
+The way `sesf` works is you execute the program and pass in an item number. It will then go and search for this item number in four locations: the AutoCAD drawing directory, the SolidWorks PDM Vault, the NC Program Library, and my personal reference models. `sesf` returns a list of these locations and how many matching files it found in each place. From there the user can select which file to open. Optionally, several flags can also be passed in to limit the search to a specific location.
+
+I am a neophyte programmer. If you are a seasoned coder familiar with Python I would love to get your feedback on my script. Thanks for checking it out!
+
+# nc-linter
+
+Shell script that reads through NC programs looking for typos/formatting errors, then prints those errors in a report.
+
+## The goal of nc-linter
+
+The program will test every file argument handed to it for common syntax errors. These are the tests performed:
+
+- [x] missing Transmission Start marker (%)
+- [x] program address is ":" instead of "O"
+- [x] extraneous Tx-markers (%)
+- [x] leading/trailing whitespace on lines
+- [x] open comments
+- [x] double-decimals (`X.0.0`)
+- [x] missing address (number without a corresponding address, eg: `0.1234`)
+- [x] demical values exceeding 4 digits.
+
+A report is output for each file. The report lists a terse error description along with the line numbers where the error appears. Some "errors", like leading/trailing spaces, don't cause any trouble at the machine but they are ugly. For these errors the total number of lines is output instead of unique line numbers.
+
+Initially my plan was for *nc-linter* to find and fix errors in NC programs. I decided against this because a bug in *nc-linter* could lead to bad fixes in hundreds of NC programs. Instead, *nc-linter* will only report on what is wrong with each file, giving you the type of error and the line on which it is located. A human will still need to fix the errors directly.
+
+## Compatibility
+
+As with all things CNC related, what mistakes will or will not be tolerated varies from control to control. Some modern controls don't require transmission indicators (`%`) or use an `O` program address. *nc-linter* is written with Haas & FANUC controllers in mind.
+
+*nc-linter* requires **dos2unix** to be installed on your system to convert line-endings. *nc-linter* will convert the file from DOS to Unix line-endings, run tests, and then re-convert back to DOS. This is done purely for ease of use in the working environment. NC programs are typically stored on Windows computers, so they should use DOS line-endings. The machine controllers typically don't care what line-endings are used. Most controls automatically replace line-endings with `;` during transmission.
+
+# cabinet-project
+
+Trying to make sense of the mystery tool cabinet using bash. The SES production area had a cabinet full of bins and each bin contained several tools. Many of the tools were custom grinds. The problem with this cabinet was the fact that no one had any idea what tools were for which part numbers.
+
+Using a series of passes through `grep` and `uniq` the following colon-delimited lists were generated:
+
+- `bins_A.uniq.r1`
+- `bins_B.uniq.r1`
+- `bins_C.uniq.r1`
+- `bins_D.uniq.r1`
+
+Each list item displays the filename, the line number on which a bin was mentioned, the comment containing a bin number. In that order. The file names from this list are also cross-referenced with a CSV to find the appropriate part number for that program file. All this information is then output to another list which will be used to sort out the cabinet.
+
+## What's in here?
+
+### `bin-reporter.sh`
+This is the main program that generates reports for each group of bins. Probably not the most efficient script ever conceived, but it works. :)
+
+### `CNC_program_log.csv`
+A CSV listing program numbers/file names and their associated part numbers.
+
+### `nested_fors.sh`
+a prototype for `bin_arrays.sh`. The nested for loop works here but not in `bin_arrays.sh`... Hmmm...
+
+## `one-bin.sh`
+A prototype for `bin-reporter`. It only runs through one group of bins.
