@@ -1,0 +1,19 @@
+gmacro title goes here
+
+STARTPARMS
+#100 = Tube OD {,3}
+#101 = Tube ID {,3}
+ENDPARMS
+
+STARTMACRO
+(begin g-code with marcos)
+(Do calculations here if necessary)
+
+OUTPUTSEQNO (allows n-words output)
+%
+O90001
+ENDMACRO
+
+STARTDESC
+enter a breif description of program and important notes
+ENDDESC

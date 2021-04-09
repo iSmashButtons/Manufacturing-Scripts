@@ -1,0 +1,91 @@
+Pot for spring assembly
+
+STARTPARMS
+$1   = Drawing Number {}
+#100 = Tube OD {,3}
+#101 = Tube ID {,3}
+#102 = Spring/Pot Diameter {,4}
+#108 = Spring C/S, "J" dimension {,4}
+#104 = Spring height, "L" dimension {,4}
+#106 = Cut depth {0.125,3}
+#107 = Lead-in chamfer height {0.03,3}
+
+
+ENDPARMS
+
+STARTMACRO
+(VERIFY INPUT AND CALCULATE DIMENSIONS:)
+(C/S & ID, CALCULATE OD)
+IF [#102 EQ 0] AND [#103 GT 0] AND [#108 GT 0] THEN #102 = [#103 + [2 * #108]]
+
+(C/S & OD, CALCULATE ID)
+IF [#103 EQ 0 ] AND [#102 GT 0] AND [#108 GT 0] THEN #103 = [#102 - [2 * #108]]
+
+(OD & ID, CALCULATE C/S)
+IF [#108 EQ 0] AND [#102 GT 0] AND [#103 GT 0] THEN #108 = [[#102 - #103] / 2]
+
+(GENERAL math)
+(path start X:)
+#111 = [#102+[2*#107]]
+(minimum stock length required:)
+#112 = [#104+#107+0.125]
+
+(start g-code)
+OUTPUTSEQNO
+%
+O90006
+
+DISPLAY(SPRING POT MACRO OUTPUT)
+DISPLAY(MACHINE: SL30)
+DISPLAY(DRAWING/PART: $1)
+DISPLAY(POT ID: #102)
+DISPLAY(STOCK OD/ID: #100 / #101)
+DISPLAY(MIN STOCK LEN REQ: #112)
+DISPLAY
+DISPLAY(TOOL LIST:)
+DISPLAY(T404 FACE PROFILE VCGT160404FN-ALU)
+DISPLAY(T222 ID PROFILE VCGT160404FN-ALU)
+
+DISPLAY(FACE)
+N1 T404 
+G00 G97 S300 M03
+G50 S600
+X[#101-0.1] Z0.5
+G96 S2000
+G01 Z0 F0.1
+X[#100+0.1] F0.008
+G00 Z5.0
+M01
+
+DISPLAY(ID)
+N2 T222 
+G00 G97 S300 M03
+G50 S600
+X[#101-0.1] Z0.5
+G96 S2000
+G01 Z0.1 F0.05
+G71 P401 Q402 U0 W0 D#106 F0.01
+
+N401 G00 X[#102+0.1]
+G01 Z0
+X#102 K-#107
+Z-[#104 + #107 + [#104 * 0.5]]
+U-[#108 * 3]
+N402 W-0.125
+
+G00 Z1.0
+G53 X0 Z-10.
+M30
+%
+ENDMACRO
+
+STARTDESC
+Create a spring pot for use in assembly of raco springs.
+
+Enter at least 2 part dimensions (OD, ID, C/S)
+
+Use a cut depth of 0.05 for PEEK.
+Cut depth up to 0.5 for most other materials.
+
+ENDDESC
+#103 = Spring ID {,4}

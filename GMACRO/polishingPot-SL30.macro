@@ -1,0 +1,91 @@
+Pot for 2nd-OP/Polish
+
+STARTPARMS
+$1   = Drawing Number {}
+#100 = Tube OD {,3}
+#101 = Tube ID {,3}
+#102 = Part OD {,4}
+#103 = Part ID {,4}
+#108 = Part C/S {,4}
+#104 = Part Overall Height {,4}
+#105 = Interference {0.005,3}
+#106 = Cut depth (use 0.05 for PEEK) {0.1,3}
+#107 = Lead-in chamfer height {0.03,3}
+
+ENDPARMS
+
+STARTMACRO
+(VERIFY INPUT AND CALCULATE DIMENSIONS:)
+(C/S & ID, CALCULATE OD)
+IF [#102 EQ 0] AND [#103 GT 0] AND [#108 GT 0] THEN #102 = [#103 + [2 * #108]]
+
+(C/S & OD, CALCULATE ID)
+IF [#103 EQ 0 ] AND [#102 GT 0] AND [#108 GT 0] THEN #103 = [#102 - [2 * #108]]
+
+(OD & ID, CALCULATE C/S)
+IF [#108 EQ 0] AND [#102 GT 0] AND [#103 GT 0] THEN #108 = [[#102 - #103] / 2]
+
+(GENERAL math)
+(path start X:)
+#111 = [#102+[2*#107]]
+(min stock length required:)
+#112 = [#104+#107+.125]
+(pot ID:)
+#113 = [#102-#105]
+
+(start g-code)
+OUTPUTSEQNO
+%
+O90001
+DISPLAY(2ND-OP/POLISH POT MACRO OUTPUT)
+DISPLAY(MACHINE: SL30)
+DISPLAY(DRAWING/PART: $1)
+DISPLAY(SEAL OD: #102)
+DISPLAY(POT ID: #113)
+DISPLAY(STOCK OD/ID: #100 / #101)
+DISPLAY(MIN STOCK LEN REQ: #112)
+DISPLAY
+DISPLAY(TOOL LIST:)
+DISPLAY(N1 FACE PROFILE)
+DISPLAY(N2 ID PROFILE)
+DISPLAY
+DISPLAYN1 (FACE)
+DISPLAY(VCGT160404FN-ALU)
+T1212
+G00 G97 S1000 M03
+X[#101-0.1] Z0.5
+G01 Z0 F0.1
+X[#100+0.1] F0.008
+G00 Z5.0
+M01
+DISPLAY
+DISPLAYN2 (ID PROFILE)
+DISPLAY(VCGT160404FN-ALU)
+T404
+G00 G97 S1000 M03
+X[#101-0.1] Z0.5
+G01 Z0.1 F0.05
+G71 P401 Q402 U-#105 W0 D#106 F0.01
+
+N401 G00 X[#102+0.1]
+G01 Z0
+X#102 K-#107
+Z-[#104*0.6666]
+U-[#108]
+N402 W-0.125
+
+G00 Z1.0
+G53 X0 Z-13.
+M30
+%
+ENDMACRO
+
+STARTDESC
+Create a pot fixture for secondary operations such as facing and polishing.
+
+Enter at least 2 part dimensions (OD, ID, C/S)
+
+Use a cut depth of 0.05 for PEEK.
+Cut depth up to 0.5 for most other materials.
+
+ENDDESC

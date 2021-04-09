@@ -1,0 +1,175 @@
+Create a spring installation tool
+STARTPARMS
+#100 = tube OD {,3} (tubeOD)
+#101 = tube ID {,3} (tubeID)
+#102 = spring diameter {,3} (springDia)
+#103 = cavity depth {,3} (cavityDepth)
+#104 = spring series No. {,3}
+$1 = spring type (enter V or U) {} (springType (V or U cantilever? Determines springRad 000-500MS or 100B-600G))
+ENDPARMS
+
+STARTMACRO
+OUTPUTSEQNO
+%
+O90004 (SPRING SETTER MACRO)
+( Other Variables )
+#300 = 0 (spring rad)
+
+( Logic Section )
+IF[$1 EQ "V"]GOTO 1000
+IF[$1 EQ "U"]GOTO 2000
+
+( For "V" cantilevers, set springRad#300 to radius on Maudlin Products chart )
+N1000 
+IF[#104 EQ 000]THEN #300 = 0.01
+IF[#104 EQ 100]THEN #300 = 0.014
+IF[#104 EQ 200]THEN #300 = 0.029
+IF[#104 EQ 300]THEN #300 = 0.049
+IF[#104 EQ 400]THEN #300 = 0.065
+IF[#104 EQ 500]THEN #300 = 0.070
+GOTO 90004
+
+( For "U" cantilevers, set springRad to radius on Maudlin Products chart )
+N2000 
+IF[#104 EQ 000]THEN #300 = 0.023
+IF[#104 EQ 100]THEN #300 = 0.027
+IF[#104 EQ 200]THEN #300 = 0.042
+IF[#104 EQ 300]THEN #300 = 0.058
+IF[#104 EQ 400]THEN #300 = 0.071
+IF[#104 EQ 500]THEN #300 = 0.119
+
+N90004 ( subtract 0.005 from springRad to ensure it fits well in spring )
+#300 = [#300 - 0.01]
+
+(MACHINE: M6/SL30)
+(TOOL SETUP:)
+(N1 T1212: FACE PROFILE, INSERT VCGT 160404FN-ALU)
+(N2 T202: OD PROFILE, INSERT VCGT 160404FN-ALU)
+(N3 T404: ID PROFILE, INSERT VCGT 160404FN-ALU)
+(N4 T808: PARTING, THINBIT 0.062 X 45DEG)
+
+G54
+N1 T1212 (FACE)
+G00 G97 S1000 M03
+X1.7 Z0.5 (X=tubeID-0.2)
+G50 S1500
+G96 S1860
+G01 Z0 F0.1
+X3.532 F0.008 (X=tubeOD+0.02)
+G00 Z0.5
+G53 X0 Z-10.
+M01
+
+N2 T202 (OD ROUGH)
+G00 G97 S1000 M03
+X3.532 Z0.5 (X=tubeOD+0.2)
+G50 S1500
+G96 S1860
+G01 Z0.2 F0.1
+G71 P201 Q202 U0.1 W0.003 D0.05 F0.01
+
+N201 G00 X2.325 Z0.1 (X=springDia-springRad)
+G01 X2.395 Z0 (X=springDia)
+G03 X2.535 Z-0.07 R0.07 (X=springDia+2(springRad),Z=springRad,R=springRad)
+G01 Z-0.435 (Z=cavityDepth+0.05)
+X2.770 K-0.01 (x=springDia+0.375)
+Z-0.56 I-0.01 (z=cavityDepth+0.05+0.125)
+U0.125 W-0.0625 (leadOut)
+N202 X3.532 W-0.015 (x=tubeOD+0.2)
+
+G00 Z0.5
+G53 X0 Z-10.
+M01
+
+N22 T202 (OD FINISH)
+(*TNR COMP ACTIVE*)
+(TIP=3, R=0.015)
+G00 G97 S1000 M03
+X3.532 Z0.5 (X=tubeOD+0.2)
+G50 S1500
+G96 S1860
+G42 G01 Z0.1 F0.1
+G70 P201 Q202 F0.003
+G00 G40 Z0.5
+G53 X0 Z-10.
+M01
+
+N3 T404 (ID ROUGH)
+G00 G97 S1000 M03
+X1.7 Z0.5 (X=tubeID-0.2)
+G50 S1500
+G96 S1860
+G01 Z0.2 F0.1
+G71 P401 Q402 U-1000 W30 D0.05 F0.01
+
+N401 G00 X2.465 Z0.01 (x=springDia+springRad)
+G01 X2.395 Z0 (x=springDia)
+G02 X2.255 Z-0.07 R0.07 (x=springDia-2(springRad),z=springRad,r=springRad)
+G01 Z-0.435 (z=cavityDepth+0.05)
+X2.02 K-0.01 (x=springDia-0.375)
+Z-0.56 I0.01 (z=cavityDepth+0.05+0.125)
+N402 W-0.0625
+
+G00 Z0.5
+G53 X0 Z-10.
+M01
+
+N22 T404 (ID FINISH)
+(*TNR COMP ACTIVE*)
+(TIP=2, R=0.015)
+G00 G97 S1000 M03
+X1.7 Z0.5 (X=tubeID-0.2)
+G50 S1500
+G96 S1860
+G41 G01 Z0.1 F0.1
+G70 P401 Q402 F0.003
+G00 G40 Z0.5
+G53 X0 Z-10.
+M01
+
+N3 T808 (PARTING)
+G00 G97 S1000 M03
+X3.532 Z0.5 (X=tubeOD+0.2)
+G50 S1000
+G96 S1860
+G01 Z0.1 F0.1
+Z-0.6225 (z=cavityDepth+0.05+0.125+0.0625)
+X2.820 (x=springDia+0.375+0.05)
+X1.97 F0.002 (x=springDia-(0.375+0.05)
+G00 G53 X0
+G53 Z-10.
+M30
+
+N1001 (shift-in)
+G50 W-0.6375 (w=cavityDepth+0.05+0.125+0.0625+0.015)
+M30
+%
+ENDMACRO
+
+STARTDESC
+*Cantilever Spring Setter Macro*
+================================
+Creates a "spring setter" to be used by assembly to install springs.
+After creating your spring setter, write the part number of the jacket this spring setter will be used on.
+
+*Entering Spring Information*
+=============================
+Check the spring listed on the PO for the jacket.
+
+SPRING TYPE:
+Springs ending with "MS" are cantilever-V springs
+Springs ending with a single letter (B,C,D,E,F,G) are cantilever-U springs.
+
+SERIES NUMBER:
+For "V" springs, the series number is the three digits preceding the letters "MS".
+For "U" springs, refer to this table:
+
+LETTER	SERIES
+======	======
+B	100
+C	200
+D	300
+E	400
+F	500
+G	600
+ENDDESC
