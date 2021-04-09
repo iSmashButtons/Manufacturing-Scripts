@@ -11,7 +11,7 @@ Is a data entry & recall program. Part of the process of creating spring-energiz
 
 The user inputs an item number. If this is the first time the item number has been entered, the user is asked to supply more information about spring type, and diameter of installation. This information is then saved to a CSV so it can be recalled later or viewed by my other coworkers. If the item number is already in the CSV file, the program returns this information in a table.
 
-# SES-Finder (sesf.py)
+## SES-Finder (sesf.py)
 
 A script to help me quickly find files in several locations based on a single item number. I use this on the job several times a day. What inspired the creation of this script was the tedium of searching for the files I needed to work with on a daily basis. Windows File Explorer is one of the worst file managers around, and SolidWork's PDM system is very slow. It can take several minutes to load and navigate to one of the several locations where the files I need might be. And once I get there, the part number I"m looking for might now be there. My job revolves around getting product out on time, so every minute counts. I needed a quicker way to find all the files I could possibly want related to a certain part number.
 
@@ -19,7 +19,7 @@ The way `sesf` works is you execute the program and pass in an item number. It w
 
 I am a neophyte programmer. If you are a seasoned coder familiar with Python I would love to get your feedback on my script. Thanks for checking it out!
 
-# NC-linter
+## NC-linter
 
 Shell script that reads through NC programs looking for typos/formatting errors, then prints those errors in a report. The script will test every file argument handed to it for common syntax errors. These are the errors it checks for:
 
@@ -36,7 +36,7 @@ A report is output for each file. The report lists a terse error description alo
 
 Initially my plan was for *nc-linter* to find and fix errors in NC programs. I decided against this because a bug in *nc-linter* could lead to bad fixes in hundreds of NC programs. Instead, *nc-linter* will only report on what is wrong with each file, giving you the type of error and the line on which it is located. A human will still need to fix the errors directly. As with all things CNC related, what mistakes will or will not be tolerated varies from control to control. Some modern controls don't require transmission markers (`%`) or use a letter other than `O` for program address. *nc-linter* is written with Haas & FANUC controllers in mind.
 
-# cabinet-project
+## cabinet-project
 
 At the start of SES in Groveland, we inherited a cabinet full of bins with tools. Most of the tools were custom grinds. There were several tools to a bin and the bins were labeled A1-60, B1-60, etc. The problem was that no one knew which tools we for what job, and the bins were shaken around turn transport. So even on the rare occasion when we came accross a program that referenced a tool in a bin here, more often than not the tool located in that bin had nothing to do with the job at hand. This script is an attempt to sort out this cabinet. I grep'd through every program looking for a pattern matching the bin labels: A24, B16, C32, et cetera. This produced a list of programs where a tool was referenced. There were many duplicate matches so I filtered these out with the `uniq` program. The end result was four files with comma-delimited lists.
 
@@ -48,3 +48,7 @@ At the start of SES in Groveland, we inherited a cabinet full of bins with tools
 Each list item displays the filename, the line number on which a bin was mentioned, the comment containing a bin number. In that order. The file names from this list are cross-referenced with a CSV to find the appropriate part number for that program file. All this information is then output to another list which will be used to sort out the cabinet. This last list I can use to look up a part drawing. I can then pull the tool and compare it to the drawing, if it looks like a useful tool for that job, I kept it. Otherwise I threw it out.
 
 `bin-reporter.sh` takes one of the above mentioned lists in argument and process it, producing a new list use to sort out the tools in the cabinet.
+
+## GMACRO
+
+This is a collection of "G-Macro" programs I've written to create fixtures and gauges in the shop. They are very similar to Macro NC programs used on my CNC controls, however instead of being run on a CNC machine these G-Macro programs are interpreted by the EditNC NC-code editor. The editor interprets the macro and produces the NC code. These programs produce a nicer end product than cutting one by hand, while also requireing far less time than writing out a program manually every time you needed to make something. 
