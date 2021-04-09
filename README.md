@@ -1,5 +1,5 @@
 # Manufacturing Scripts
-A collection of programs/scripts I've used on the job.
+A collection of programs/scripts I've created and used on the job.
 
 ## ncArchiver.py
 
