@@ -51,4 +51,4 @@ Each list item displays the filename, the line number on which a bin was mention
 
 ## GMACRO
 
-This is a collection of "G-Macro" programs I've written to create fixtures and gauges in the shop. They are very similar to Macro NC programs used on my CNC controls, however instead of being run on a CNC machine these G-Macro programs are interpreted by the EditNC NC-code editor. The editor interprets the macro and produces the NC code. These programs produce a nicer end product than cutting one by hand, while also requireing far less time than writing out a program manually every time you needed to make something. 
+This is a collection of "G-Macro" programs I've written to create fixtures and gauges in the shop. They are very similar to Macro NC programs used on many CNC controls, however instead of being run on a CNC machine these G-Macro programs are interpreted by the EditNC NC-code editor. The editor interprets the macro and produces the NC code. These programs produce a nicer end product than cutting one by hand, while also requireing far less time than writing out a program manually every time you needed to make something. 
