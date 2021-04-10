@@ -1,0 +1,38 @@
+#### Logging run at 20210409.200115
+#### ./test-programs/FC01N10202.NC
+.... Global fixes (94) for Leading Spaces
+
+.... Edits to line 14:
+Reason:   Invalid Comment
+Original: ((35 DEG  OD PROFILE TOOL LH .015 TNR)
+Revised:  ([35 DEG  OD PROFILE TOOL LH .015 TNR])
+
+.... Edits to line 15:
+Reason:   Invalid Comment
+Original: (VCGT-110304FN-ALU))
+Revised:  ([VCGT-110304FN-ALU])
+
+.... Edits to line 112:
+Reason:   Comment trailing text
+Original: TOOLING LIST
+Revised:  ( TOOLING LIST )
+
+.... Edits to line 113:
+Reason:   Comment trailing text
+Original: TOOL   2 : (35 DEG  OD PROFILE TOOL  .015 TNR)  (VCGT-110304FN-ALU)
+Revised:  ( TOOL   2 : [35 DEG  OD PROFILE TOOL  .015 TNR]  [VCGT-110304FN-ALU] )
+
+.... Edits to line 114:
+Reason:   Comment trailing text
+Original: TOOL   4 : (.500 SHANK 35 DEG ID  BORE BAR .015 TNR) (INSERT VCGT-110304FN-ALU) ( .830 MIN BORE)
+Revised:  ( TOOL   4 : [.500 SHANK 35 DEG ID  BORE BAR .015 TNR] [INSERT VCGT-110304FN-ALU] [ .830 MIN BORE] )
+
+.... Edits to line 115:
+Reason:   Comment trailing text
+Original: TOOL   6 : .064 CANTILEVER CAVITY TOOL CC 01002
+Revised:  ( TOOL   6 : .064 CANTILEVER CAVITY TOOL CC 01002 )
+
+.... Edits to line 116:
+Reason:   Comment trailing text
+Original: TOOL   8 : PART OFF TOOL .062 X 45 DEG TB # CN004740A
+Revised:  ( TOOL   8 : PART OFF TOOL .062 X 45 DEG TB # CN004740A )

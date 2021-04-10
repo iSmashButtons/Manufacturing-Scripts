@@ -21,7 +21,7 @@ I am a neophyte programmer. If you are a seasoned coder familiar with Python I w
 
 ## NC-linter
 
-Shell script that reads through NC programs looking for typos/formatting errors, then prints those errors in a report. The script will test every file argument handed to it for common syntax errors. These are the errors it checks for:
+*nc-linter* is a BASH script with a big chunk of AWK script inside doing most of the work. In the configuration section, you point it to a directory that contains the NC programs you want to lint. The AWK script then reads through each file and checks for common mistakes. If any are found, the script also fixes the error and logs the changes made. The fixed programs are written to a separate directory, where they can be double-checked by a human before replacing the originals. I got a lot of help on this one from my friend Paul in England who is a retired sysadmin and AWK expert. I'm not sure if BASH/AWK were the best tools for this job, but I was learning to use them at the time. *nc-linter* checks for these errors: 
 
 - missing Transmission Start marker (%)
 - program address is ":" instead of "O"
@@ -32,9 +32,7 @@ Shell script that reads through NC programs looking for typos/formatting errors,
 - missing address (number without a corresponding address, eg: `0.1234`)
 - decimal values exceeding 4 digits.
 
-A report is output for each file. The report lists a terse error description along with the line numbers where the error appears. Some "errors", like leading/trailing spaces, don't cause any trouble at the machine but they are ugly. For these errors the total number of lines is output instead of unique line numbers.
-
-Initially my plan was for *nc-linter* to find and fix errors in NC programs. I decided against this because a bug in *nc-linter* could lead to bad fixes in hundreds of NC programs. Instead, *nc-linter* will only report on what is wrong with each file, giving you the type of error and the line on which it is located. A human will still need to fix the errors directly. As with all things CNC related, what mistakes will or will not be tolerated varies from control to control. Some modern controls don't require transmission markers (`%`) or use a letter other than `O` for program address. *nc-linter* is written with Haas & FANUC controllers in mind.
+A log is output for each file. The report lists a terse error description along with the line numbers where the error appears. Some "errors", like leading/trailing spaces, don't cause any trouble at the machine but they are ugly. For these errors the total number of lines is output instead of unique line numbers.
 
 ## cabinet-project
 

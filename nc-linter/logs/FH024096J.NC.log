@@ -1,0 +1,15 @@
+#### Logging run at 20210409.200115
+#### ./test-programs/FH024096J.NC
+.... Global fixes (110) for Leading Spaces
+.... Global fixes (3) for Trailing Spaces
+
+.... Edits to line 1:
+Reason:   Insert initial TSS
+Original: 
+Before:   %
+Revised:  
+
+.... Edits to line 109:
+Reason:   Invalid Comment
+Original: T707 (TOOL: (PROFILE CUTOFF) OD PROFILE TOOL .125  WIDE X .005 TNR)
+Revised:  T707 (TOOL: [PROFILE CUTOFF] OD PROFILE TOOL .125  WIDE X .005 TNR)

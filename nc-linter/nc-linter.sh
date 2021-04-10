@@ -5,10 +5,11 @@
 
 TS="$( date '+%Y%m%d.%H%M%S' )"
 
-BASE="/home/paul/SandBox/ncLinter"
-DATA="./Inputs"
-WORK="./Latest"
-LOGS="./Logs"
+# CONFIG:
+BASE="/home/denny/bin/nc-linter" # path to dir containing DATA, WORK, LOGS
+DATA="./test-programs" # dir with programs to be linted
+WORK="./latest" # dir with corrected programs
+LOGS="./logs" # dir for logs detailing what `nc-linter` did to each file
 
 #### Check and update numerical control data files.
 
@@ -263,8 +264,9 @@ function fixBadWords (Local, j, tx, k) {
 			gsub (/[\040\011]+/, BLK, tx);
 			++G[sprintf ("Invalid Address %s", tx)];
 			#.. CAUTION: Comment out the whole line.
-			tx = fixComment( "( [Invalid Address: " tx "] " C[j] " )");
-			Change( j, tx, "Invalid Address found");
+            # disabled because it was considering block-deletes ("/") as invalid addresses.
+			#tx = fixComment( "( [Invalid Address: " tx "] " C[j] " )");
+			#Change( j, tx, "Invalid Address found");
 		}
 	}
 }

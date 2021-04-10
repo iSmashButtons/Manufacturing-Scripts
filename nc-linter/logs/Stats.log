@@ -1,0 +1,75 @@
+
+Statistics and Errors:
+       1  DATA=./test-programs
+       1  LOGS=./logs
+       1  TIME=20210409.200115
+       1  WORK=./latest
+      35 Address type: /G
+      19 Address type: /M
+       5 Address type: /N
+       9 Address type: /Z
+       2 Address type: C
+     141 Address type: F
+     397 Address type: G
+       1 Address type: H
+       1 Address type: L
+     127 Address type: M
+      53 Address type: N
+      13 Address type: O
+       6 Address type: P
+      39 Address type: R
+      49 Address type: S
+      73 Address type: T
+     431 Address type: X
+     501 Address type: Z
+       1 Brackets :(()()()):
+       4 Brackets :(()()):
+       2 Brackets :(()():
+       1 Brackets :(()):
+       1 Brackets :(():
+       1 Brackets :()()():
+       5 Brackets :()():
+       1 Brackets :()):
+     154 Brackets :():
+       7 Brackets :(:
+    1119 Brackets ::
+       1 DecDoubleFix |.0.0| as |0.0|
+       1 DecDoubleFix |0.0.0| as |0.00|
+       1 DecDoubleFix |0.0.| as |0.0|
+       1 DecDoubleFix |0.1267.5| as |0.12675|
+       1 DecDoubleFix |0.43.5| as |0.435|
+       1 DecDoubleFix |0.44.0| as |0.440|
+       2 DecDoubleFix |3.0.0| as |3.00|
+       1 DecExcess -0.01215
+       1 DecExcess -0.022889
+       1 DecExcess -0.11255
+       1 DecExcess -0.12055
+       1 DecExcess 0.403333333
+       1 DecExcess 1.027562
+       1 DecExcess 3.14159
+       1 DecExcess 3.141592
+      12 Files read
+     101 Fixes in ./test-programs/FC01N10202.NC
+      51 Fixes in ./test-programs/FC01N10905R.NC
+      86 Fixes in ./test-programs/FC01N10906J.NC
+      49 Fixes in ./test-programs/FC01N11238H.NC
+      78 Fixes in ./test-programs/FC01N12236.NC
+     107 Fixes in ./test-programs/FC01N12996J.NC
+     112 Fixes in ./test-programs/FH024096J.NC
+     181 Fixes in ./test-programs/FL053152.NC
+      78 Fixes in ./test-programs/FM063785J.NC
+      15 Fixes in ./test-programs/FM310972.NC
+      83 Fixes in ./test-programs/FMD10696.NC
+     110 Fixes in ./test-programs/FS032078.NC
+       1 Invalid Address  1.0276
+      10 Invalid Address / 
+       1 Invalid Address 3.5
+       1 Invalid Address :16140
+       1 Invalid Address TOOLING LIST
+       1 Invalid Address Tool 10 : 
+       1 Invalid Address Tool 2 : 
+       1 Invalid Address Tool 4 : ACCUGRIND BORE TOOL .187 SQ CARBIDE .005 TNR
+       1 Invalid Address Tool 5 : 5/16 ENDMILL 2FL 3/8S 
+       1 Invalid Address Tool 8 : PART OFF TOOL .062 X 45 DEG TB # CA
+      12 Written files
+      12 Written logs

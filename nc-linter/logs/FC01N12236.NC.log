@@ -1,0 +1,15 @@
+#### Logging run at 20210409.200115
+#### ./test-programs/FC01N12236.NC
+.... Global fixes (76) for Leading Spaces
+.... Global fixes (8) for Trailing Spaces
+
+.... Edits to line 1:
+Reason:   Insert initial TSS
+Original: 
+Before:   %
+Revised:  
+
+.... Edits to line 2:
+Reason:   Delete Spurious TSS
+Original: %
+Deleted:  %

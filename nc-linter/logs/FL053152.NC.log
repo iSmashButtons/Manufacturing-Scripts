@@ -1,0 +1,44 @@
+#### Logging run at 20210409.200115
+#### ./test-programs/FL053152.NC
+.... Global fixes (173) for Leading Spaces
+.... Global fixes (2) for Trailing Spaces
+
+.... Edits to line 19:
+Reason:   Invalid Comment
+Original: (VCGT-110304FN-ALU
+Revised:  (VCGT-110304FN-ALU)
+
+.... Edits to line 178:
+Reason:   Invalid Comment
+Original: (PART OFF TOOL .062 X 45 DEG TB # CN004740A
+Revised:  (PART OFF TOOL .062 X 45 DEG TB # CN004740A)
+
+.... Edits to line 196:
+Reason:   Comment trailing text
+Original: TOOLING LIST
+Revised:  ( TOOLING LIST )
+
+.... Edits to line 197:
+Reason:   Comment trailing text
+Original: TOOL   2 : 35 DEG  OD PROFILE TOOL LH .015 TNR VCGT-110304FN-ALU
+Revised:  ( TOOL   2 : 35 DEG  OD PROFILE TOOL LH .015 TNR VCGT-110304FN-ALU )
+
+.... Edits to line 198:
+Reason:   Comment trailing text
+Original: TOOL  15 : (.062 SANDVIK  EXTERNAL GROOVE TOOL)  ( INSERT TLG-3062R 1125)
+Revised:  ( TOOL  15 : [.062 SANDVIK  EXTERNAL GROOVE TOOL]  [ INSERT TLG-3062R 1125] )
+
+.... Edits to line 199:
+Reason:   Comment trailing text
+Original: TOOL   4 : (.500 SHANK 35 DEG ID  BORE BAR .015 TNR) (INSERT VCGT-110304FN-ALU)
+Revised:  ( TOOL   4 : [.500 SHANK 35 DEG ID  BORE BAR .015 TNR] [INSERT VCGT-110304FN-ALU] )
+
+.... Edits to line 200:
+Reason:   Comment trailing text
+Original: TOOL   6 : 45 DEG INTERNAL CUSTOM  GROOVE TOOL.010 TNR
+Revised:  ( TOOL   6 : 45 DEG INTERNAL CUSTOM  GROOVE TOOL.010 TNR )
+
+.... Edits to line 201:
+Reason:   Comment trailing text
+Original: TOOL   8 : PART OFF TOOL .062 X 45 DEG TB # CN004740A
+Revised:  ( TOOL   8 : PART OFF TOOL .062 X 45 DEG TB # CN004740A )

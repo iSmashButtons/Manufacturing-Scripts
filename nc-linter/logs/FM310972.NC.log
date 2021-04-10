@@ -1,0 +1,9 @@
+#### Logging run at 20210409.200115
+#### ./test-programs/FM310972.NC
+.... Global fixes (1) for Leading Spaces
+.... Global fixes (13) for Trailing Spaces
+
+.... Edits to line 2:
+Reason:   Repair Program address
+Original: :3175 (ERIKS FM310972)
+Revised:  O3175 (ERIKS FM310972)

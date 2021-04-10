@@ -1,0 +1,54 @@
+#### Logging run at 20210409.200115
+#### ./test-programs/FM063785J.NC
+.... Global fixes (68) for Leading Spaces
+.... Global fixes (1) for Trailing Spaces
+
+.... Edits to line 22:
+Reason:   Double Decimal
+Original: G01 Z.0.0 F0.002
+Revised:  G01 Z0.0 F0.002
+
+.... Edits to line 33:
+Reason:   Double Decimal
+Original: G00 Z3.0.0
+Revised:  G00 Z3.00
+
+.... Edits to line 42:
+Reason:   Double Decimal
+Original: G00 X0.0.
+Revised:  G00 X0.0
+
+.... Edits to line 44:
+Reason:   Double Decimal
+Original: G01 Z-0.44.0 F0.002
+Revised:  G01 Z-0.440 F0.002
+
+.... Edits to line 61:
+Reason:   Double Decimal
+Original: G00 Z3.0.0
+Revised:  G00 Z3.00
+
+.... Edits to line 73:
+Reason:   Double Decimal
+Original: G01 Z-0.43.5 F0.1
+Revised:  G01 Z-0.435 F0.1
+
+.... Edits to line 85:
+Reason:   Invalid Comment
+Original: (TOOL   2 : (35 DEG  OD PROFILE TOOL  .015 TNR)  (VCGT-110304FN-ALU)
+Revised:  (TOOL   2 : [35 DEG  OD PROFILE TOOL  .015 TNR]  [VCGT-110304FN-ALU])
+
+.... Edits to line 86:
+Reason:   Invalid Comment
+Original: (TOOL   5 : 5/16 ENDMILL 2FL 3/8S C33814
+Revised:  (TOOL   5 : 5/16 ENDMILL 2FL 3/8S C33814)
+
+.... Edits to line 87:
+Reason:   Invalid Comment
+Original: (TOOL   4 : ACCUGRIND ID  TOOL  ID-180  .005 TNR
+Revised:  (TOOL   4 : ACCUGRIND ID  TOOL  ID-180  .005 TNR)
+
+.... Edits to line 88:
+Reason:   Invalid Comment
+Original: (TOOL   8 : PART OFF TOOL .062 X 45 DEG TB # CN004740A
+Revised:  (TOOL   8 : PART OFF TOOL .062 X 45 DEG TB # CN004740A)

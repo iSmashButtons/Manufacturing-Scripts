@@ -1,0 +1,65 @@
+#### Logging run at 20210409.200115
+#### ./test-programs/FS032078.NC
+.... Global fixes (98) for Leading Spaces
+.... Global fixes (10) for Trailing Spaces
+
+.... Edits to line 1:
+Reason:   Insert initial TSS
+Original: 
+Before:   %
+Revised:  
+
+.... Edits to line 2:
+Reason:   Delete Spurious TSS
+Original: %
+Deleted:  %
+
+.... Edits to line 21:
+Reason:   Excess digits
+Original: G00 1.027562
+Revised:  G00 1.0276
+
+.... Edits to line 34:
+Reason:   Excess digits
+Original: X0.554 Z-0.022889
+Revised:  X0.554 Z-0.0229
+
+.... Edits to line 44:
+Reason:   Invalid Comment
+Original: (INSERT TPI 432B
+Revised:  (INSERT TPI 432B)
+
+.... Edits to line 58:
+Reason:   Excess digits
+Original: G03 X0.403333333 Z-0.035 R0.002
+Revised:  G03 X0.4033 Z-0.035 R0.002
+
+.... Edits to line 69:
+Reason:   Double Decimal
+Original: G00 X0.0.0
+Revised:  G00 X0.00
+
+.... Edits to line 92:
+Reason:   Double Decimal
+Original: Z-0.1267.5
+Revised:  Z-0.12675
+
+.... Edits to line 99:
+Reason:   Excess digits
+Original: X3.141592 (pi to 6 digits for regex testing)
+Revised:  X3.1416 (pi to 6 digits for regex testing)
+
+.... Edits to line 100:
+Reason:   Excess digits
+Original: X3.14159 (pi to 5 digits for regex testing)
+Revised:  X3.1416 (pi to 5 digits for regex testing)
+
+.... Edits to line 103:
+Reason:   Invalid Comment
+Original: (Gerard sucks at programming
+Revised:  (Gerard sucks at programming)
+
+.... Edits to line 118:
+Reason:   Delete Spurious TSS
+Original: %
+Deleted:  %

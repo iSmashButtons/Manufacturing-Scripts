@@ -1,0 +1,18 @@
+#### Logging run at 20210409.200115
+#### ./test-programs/FC01N12996J.NC
+.... Global fixes (104) for Trailing Spaces
+
+.... Edits to line 2:
+Reason:   Repair Program address
+Original: :16435 (NINGBO FC01N12996J)
+Revised:  O16435 (NINGBO FC01N12996J)
+
+.... Edits to line 123:
+Reason:   Comment trailing text
+Original: REV 0 DC 10-3-19:
+Revised:  ( REV 0 DC 10-3-19: )
+
+.... Edits to line 124:
+Reason:   Comment trailing text
+Original: NO CHANGES.
+Revised:  ( NO CHANGES. )

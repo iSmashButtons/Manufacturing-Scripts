@@ -1,0 +1,50 @@
+#### Logging run at 20210409.200115
+#### ./test-programs/FMD10696.NC
+.... Global fixes (56) for Leading Spaces
+.... Global fixes (2) for Trailing Spaces
+.... Global fixes (16) for Addresses Separated
+
+.... Edits to line 33:
+Reason:   Excess digits
+Original: X1.3965 Z-0.12055
+Revised:  X1.3965 Z-0.1206
+
+.... Edits to line 48:
+Reason:   Excess digits
+Original: X1.08 Z-0.01215
+Revised:  X1.08 Z-0.0121
+
+.... Edits to line 87:
+Reason:   Excess digits
+Original: G01 X1.34 Z-0.11255 F0.03
+Revised:  G01 X1.34 Z-0.1125 F0.03
+
+.... Edits to line 95:
+Reason:   Delete Spurious TSS
+Original: %
+Deleted:  %
+
+.... Edits to line 97:
+Reason:   Delete Spurious TSS
+Original: %
+Deleted:  %
+
+.... Edits to line 105:
+Reason:   Delete Spurious TSS
+Original: %
+Deleted:  %
+
+.... Edits to line 107:
+Reason:   Delete Spurious TSS
+Original: %
+Deleted:  %
+
+.... Edits to line 117:
+Reason:   Invalid Comment
+Original: (TOOL   2 : (35 DEG  OD PROFILE TOOL  .015 TNR)  (VCGT-110304FN-ALU))
+Revised:  (TOOL   2 : [35 DEG  OD PROFILE TOOL  .015 TNR]  [VCGT-110304FN-ALU])
+
+.... Edits to line 118:
+Reason:   Invalid Comment
+Original: (TOOL   4 : (ARNO S10H SVLCR 07-.375  35 DEG ID  .015 TNR)  (INSERT VCGT-110304FN-ALU)
+Revised:  (TOOL   4 : [ARNO S10H SVLCR 07-.375  35 DEG ID  .015 TNR]  [INSERT VCGT-110304FN-ALU])
