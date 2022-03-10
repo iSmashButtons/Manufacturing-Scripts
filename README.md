@@ -11,7 +11,7 @@ Is a data entry & recall program. Part of the process of creating spring-energiz
 
 The user inputs an item number. If this is the first time the item number has been entered, the user is asked to supply more information about spring type, and diameter of installation. This information is then saved to a CSV so it can be recalled later or viewed by my other coworkers. If the item number is already in the CSV file, the program returns this information in a table.
 
-## SES-Finder (sesf.py)
+## SES-Finder
 
 A script to help me quickly find files in several locations based on a single item number. I use this on the job several times a day. What inspired the creation of this script was the tedium of searching for the files I needed to work with on a daily basis. Windows File Explorer is one of the worst file managers around, and SolidWork's PDM system is very slow. It can take several minutes to load and navigate to one of the several locations where the files I need might be. And once I get there, the part number I"m looking for might now be there. My job revolves around getting product out on time, so every minute counts. I needed a quicker way to find all the files I could possibly want related to a certain part number.
 
